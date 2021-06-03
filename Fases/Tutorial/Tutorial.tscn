@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fases/Tutorial/WASD.png" type="Texture" id=2]
+[ext_resource path="res://Fases/tileset/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fases/Tutorial/Area2D.gd" type="Script" id=4]
+[ext_resource path="res://Musicas/Fun_Adventure.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Fases/Tutorial/Area2D2.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1682.54, 111.936 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1210, 190 )
+
+[node name="Node" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -230, 80 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 90.4727, 97.5202 )
+scale = Vector2( 0.696922, 0.605699 )
+texture = ExtResource( 2 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 196603, 0, 5, 262139, 0, 8, 262140, 0, 2, 327675, 0, 131073, 327676, 0, 65539, 327677, 0, 2, 262165, 0, 196608, 262166, 0, 196609, 262167, 0, 196609, 262168, 0, 196609, 262169, 0, 196609, 262170, 0, 196609, 262171, 0, 196609, 262172, 0, 196610, 393211, 0, 131073, 393212, 0, 196619, 393213, 0, 65539, 393214, 0, 2, 327698, 0, 196608, 327699, 0, 196610, 458747, 0, 131073, 458748, 0, 196619, 458749, 0, 196619, 458750, 0, 65539, 458751, 0, 2, 393231, 0, 196608, 393232, 0, 196610, 524283, 0, 65537, 524284, 0, 131072, 524285, 0, 131072, 524286, 0, 131072, 524287, 0, 65547, 458752, 0, 196609, 458753, 0, 196609, 458754, 0, 196609, 458755, 0, 196609, 458756, 0, 196609, 458757, 0, 196609, 458758, 0, 196609, 458759, 0, 196609, 458760, 0, 196610, 458764, 0, 196608, 458765, 0, 196610 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 68.095
+margin_top = -4.85234
+margin_right = 108.095
+margin_bottom = 9.14766
+text = "Pular"
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 1810.0
+margin_top = 210.0
+margin_right = 1960.0
+margin_bottom = 281.0
+text = "PULE!!!"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 653.433
+margin_top = 350.379
+margin_right = 693.433
+margin_bottom = 364.379
+text = "Pule"
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -122.197
+margin_top = 143.386
+margin_right = -64.1973
+margin_bottom = 157.386
+text = "Esquerda"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 254.205
+margin_top = 140.179
+margin_right = 297.205
+margin_bottom = 154.179
+text = "Direita"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 2160, 430 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1380, 10.0001 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 420, 710 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Inimigo/ILLUMINATI.gd" type="Script" id=1]
+[ext_resource path="res://Inimigo/Illuminati.png" type="Texture" id=2]
+
+[node name="ILLUMINATI" type="StaticBody2D" groups=[
+"enemies",
+]]
+position = Vector2( 543, 77 )
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -2.86102e-006 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -9.76709, -515.381, 601.575, 511.926, -614.806, 524.531 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -22.3716, -502.776, 601.575, 511.926, -633.714, 524.531 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="dash" type="Timer" parent="."]
+wait_time = 0.5
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="dash" to="." method="_on_dash_timeout"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Fun_Adventure.ogg-9572a91580399cb81c502c515e39d64a.oggstr"
+
+[deps]
+
+source_file="res://Musicas/Fun_Adventure.ogg"
+dest_files=[ "res://.import/Fun_Adventure.ogg-9572a91580399cb81c502c515e39d64a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

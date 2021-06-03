@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/133011__cosmicd__light-terrors.wav-d8344bc4282e4573b0255b0d11ea3dce.sample"
+
+[deps]
+
+source_file="res://Musicas/133011__cosmicd__light-terrors.wav"
+dest_files=[ "res://.import/133011__cosmicd__light-terrors.wav-d8344bc4282e4573b0255b0d11ea3dce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
